@@ -49,7 +49,7 @@ const Customer = () => {
     },
   ];
 
-  console.log(data);
+  // console.log(data);
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="CUSTOMERS" subtitle="List of Customer" />
