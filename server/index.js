@@ -16,7 +16,13 @@ import salesRoutes from "./routes/salesRoute.js";
 import User from "./models/User.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
-import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
+import Transaction from "./models/Transaction.js";
+import {
+  dataUser,
+  dataProduct,
+  dataProductStat,
+  dataTransaction,
+} from "./data/index.js";
 
 /** CONFIGURATION **/
 dotenv.config();
@@ -53,6 +59,7 @@ const connectDatabase = () => {
       // User.insertMany(dataUser);
       // Product.insertMany(dataProduct);
       // ProductStat.insertMany(dataProductStat);
+      // Transaction.insertMany(dataTransaction);
     })
     .catch((err) => {
       console.log("Could not connect to the database. Exiting now...", err);
