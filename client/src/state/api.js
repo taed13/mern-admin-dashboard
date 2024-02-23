@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const host = "https://mern-admin-dashboard-steel.vercel.app/";
-// export const host = "http://localhost:5001/";
+// export const host = "https://mern-admin-dashboard-steel.vercel.app/";
+export const host = "http://localhost:5001/";
 
 export const api = createApi({
   reducerPath: "adminApi",
   baseQuery: fetchBaseQuery({ baseUrl: host }),
-  tagTypes: ["User", "Products", "Customers", "Transactions"],
+  tagTypes: ["User", "Products", "Customers", "Transactions", "Geography"],
   endpoints: (builder) => ({
     getUser: builder.query({
       query: (id) => `general/user/${id}`,
@@ -28,6 +28,10 @@ export const api = createApi({
         providesTags: ["Transactions"],
       }),
     }),
+    getGeography: builder.query({
+      query: () => "client/geography",
+      providesTags: ["Geography"],
+    }),
   }),
 });
 
@@ -36,4 +40,5 @@ export const {
   useGetProductsQuery,
   useGetCustomersQuery,
   useGetTransactionsQuery,
+  useGetGeographyQuery,
 } = api;
