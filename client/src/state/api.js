@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const host = "https://mern-admin-dashboard-steel.vercel.app/";
-// export const host = "http://localhost:5001/";
+// export const host = "https://mern-admin-dashboard-steel.vercel.app/";
+export const host = "http://localhost:5001/";
 
 export const api = createApi({
   reducerPath: "adminApi",
